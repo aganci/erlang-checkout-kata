@@ -3,6 +3,14 @@ Erlang Checkout Kata
 
 The checkout kata in Erlang.
 
+Item   Unit      Special
+         Price     Price
+  --------------------------
+    A     50       3 for 130
+    B     30       2 for 45
+    C     20
+    D     15
+
 ```ruby
 class TestPrice < Test::Unit::TestCase
 

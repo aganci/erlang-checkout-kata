@@ -3,4 +3,5 @@
 
 checkout_test() ->
 	?assertEqual(0, checkout:price("")),
-	?assertEqual(50, checkout:price("A")).
+	?assertEqual(50, checkout:price("A")),
+	?assertEqual(80, checkout:price("AB")).
