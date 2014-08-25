@@ -3,6 +3,8 @@
 
 price([$A, $A, $A | Tail]) ->
 	130 + price(Tail);
+price([$B, $B | Tail]) ->
+	45 + price(Tail);
 price([Head|Tail]) ->
 	price(Head) + price(Tail);
 price([]) ->
