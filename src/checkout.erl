@@ -1,8 +1,8 @@
 -module(checkout).
 -export([price/1]).
 
-price("AAA") ->
-	130;
+price([$A, $A, $A | Tail]) ->
+	130 + price(Tail);
 price([Head|Tail]) ->
 	price(Head) + price(Tail);
 price([]) ->

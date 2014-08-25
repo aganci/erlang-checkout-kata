@@ -8,7 +8,10 @@ checkout_test() ->
 	?assertEqual(115, checkout:price("CDBA")),
 
 	?assertEqual(100, checkout:price("AA")),
-	?assertEqual(130, checkout:price("AAA")).
+	?assertEqual(130, checkout:price("AAA")),
+    ?assertEqual(180, checkout:price("AAAA")),
+    ?assertEqual(260, checkout:price("AAAAAA")).
+
 
 
 
