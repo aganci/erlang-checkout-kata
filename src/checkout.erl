@@ -8,4 +8,8 @@ price([]) ->
 price($A) ->
 	50;
 price($B) ->
-	30.
+	30;
+price($C) ->
+	20;
+price($D) ->
+	15.
