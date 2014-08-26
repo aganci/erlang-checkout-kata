@@ -2,21 +2,22 @@
 -export([price/1]).
 
 price(Items) ->
-	calculatePrice(lists:sort(Items)).
+	price(lists:sort(Items), 0).
 
-calculatePrice([$A, $A, $A | Tail]) ->
-	130 + calculatePrice(Tail);
-calculatePrice([$B, $B | Tail]) ->
-	45 + calculatePrice(Tail);
-calculatePrice([Head|Tail]) ->
-	calculatePrice(Head) + calculatePrice(Tail);
-calculatePrice([]) ->
-	0;
-calculatePrice($A) ->
+price([], Acc) ->
+	Acc;
+price([$A, $A, $A | Tail], Acc) ->
+	price(Tail, Acc + 130);
+price([$B, $B | Tail], Acc) ->
+	price(Tail, Acc + 45);
+price([Head|Tail], Acc) ->
+	price(Tail, Acc + unit_price(Head)).
+
+unit_price($A) ->
 	50;
-calculatePrice($B) ->
+unit_price($B) ->
 	30;
-calculatePrice($C) ->
+unit_price($C) ->
 	20;
-calculatePrice($D) ->
+unit_price($D) ->
 	15.
