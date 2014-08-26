@@ -14,7 +14,9 @@ checkout_test() ->
 
     ?assertEqual(160, checkout:price("AAAB")),
     ?assertEqual(175, checkout:price("AAABB")),
-    ?assertEqual(190, checkout:price("AAABBD")).
+    ?assertEqual(190, checkout:price("AAABBD")),
+    ?assertEqual(190, checkout:price("DABABA")).
+
 
 
 

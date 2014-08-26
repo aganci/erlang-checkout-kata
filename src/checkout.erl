@@ -1,19 +1,22 @@
 -module(checkout).
 -export([price/1]).
 
-price([$A, $A, $A | Tail]) ->
-	130 + price(Tail);
-price([$B, $B | Tail]) ->
-	45 + price(Tail);
-price([Head|Tail]) ->
-	price(Head) + price(Tail);
-price([]) ->
+price(Items) ->
+	calculatePrice(lists:sort(Items)).
+
+calculatePrice([$A, $A, $A | Tail]) ->
+	130 + calculatePrice(Tail);
+calculatePrice([$B, $B | Tail]) ->
+	45 + calculatePrice(Tail);
+calculatePrice([Head|Tail]) ->
+	calculatePrice(Head) + calculatePrice(Tail);
+calculatePrice([]) ->
 	0;
-price($A) ->
+calculatePrice($A) ->
 	50;
-price($B) ->
+calculatePrice($B) ->
 	30;
-price($C) ->
+calculatePrice($C) ->
 	20;
-price($D) ->
+calculatePrice($D) ->
 	15.
